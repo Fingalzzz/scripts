@@ -1,2 +1,2 @@
 # Scripts
-Some scripts for personal use.
+Some Tampermonkey scripts for personal use.
