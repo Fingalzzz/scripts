@@ -10,7 +10,7 @@
 // @match        https://www.bilibili.com/bangumi/play/*
 // @match        https://www.iqiyi.com/*
 // @match        https://v.qq.com/x/*
-// @match        https://www.youtube.com/watch?v=*
+// @match        https://www.youtube.com/*
 // @grant        none
 // ==/UserScript==
 
