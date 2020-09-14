@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fullscreen Shortcut
 // @namespace    https://greasyfork.org/users/673298
-// @version      1.1
+// @version      1.2
 // @author       Fingalzzz
 // @description  Add a shortcut to enable fullscreen mode of several streaming-media websites
 // @homepage     https://greasyfork.org/en/scripts/408194-fullscreen-shortcut
@@ -11,6 +11,7 @@
 // @match        https://www.iqiyi.com/*
 // @match        https://v.qq.com/x/*
 // @match        https://www.youtube.com/*
+// @match        https://v.youku.com/*
 // @grant        none
 // ==/UserScript==
 
@@ -52,6 +53,10 @@
                 selector = ".txp_btn.txp_btn_fullscreen";
             } else if (link.includes('youtube.com')) {
                 selector = ".ytp-fullscreen-button.ytp-button";
+            } else if (link.includes('v.youku.com')) {
+                // Youku use different button to enable and exit fullscreen
+                // so we need to check whether button we need now.
+                selector = document.fullscreen? ".iconfont.icon-exit-fullscreen":".iconfont.icon-fullscreen"
             }
             btn = document.querySelector(selector);
             btn.click();
