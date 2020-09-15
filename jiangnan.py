@@ -16,16 +16,16 @@ YINGTIAN = (402, 1155)
 ZHIDAOLE = (677, 1797)
 
 SWIPE_MAP = (908, 1648, 908 - 776, 1648 - 599, 1)
-SWIPE_SUZHOU_WELL = (10, 722, 1075, 1100, 3)
+SWIPE_SUZHOU_WELL = (10, 722, 1075, 1100, 3.5)
 
 
 def suzhou_well():
     device.click(*FUYING)
     device.click(*DIJI)
     device.click(*FUYING)
-    time.sleep(0.1)
+    time.sleep(0.2)
     device.swipe(*SWIPE_SUZHOU_WELL)
-    time.sleep(3)
+    time.sleep(2)
     for i in range(36):
         if i in EMPTY_WELL_LIST:
             continue
@@ -50,6 +50,7 @@ def move_to_suzhou():
     device.click(*SUZHOU)
     time.sleep(5)
     device.click(*ZHIDAOLE)
+    time.sleep(0.3)
 
 
 def move_to_yingtian():
@@ -59,6 +60,7 @@ def move_to_yingtian():
     device.click(*YINGTIAN)
     time.sleep(5)
     device.click(*ZHIDAOLE)
+    time.sleep(0.3)
 
 
 if __name__ == "__main__":
