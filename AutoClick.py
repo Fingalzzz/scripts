@@ -1,22 +1,22 @@
 from adbutils import adb  # https://github.com/openatx/adbutils
 from PIL import Image
 from datetime import datetime
+import time
 
 IP_ADDRESS = "192.168.199.202"
 PORT = 5792
+# adb.connect("{}:{}".format(IP_ADDRESS, PORT))
+# device = adb.device()
 
 
-def remote_connect(ip="{}:{}".format(IP_ADDRESS, PORT)):
+def connect(ip="{}:{}".format(IP_ADDRESS, PORT)):
     adb.connect(ip)
-
-
-def get_device(serial="{}:{}".format(IP_ADDRESS, PORT)):
-    return adb.device(serial)
+    return adb.device()
 
 
 def screenshot(device=None, name=None):
     if device is None:
-        device = get_device()
+        device = connect()
     if name is None:
         name = datetime.now().strftime("%Y%m%d_%H%M%S") + ".png"
     device.shell("screencap -p /sdcard/Pictures/Screenshots/" + name)
@@ -25,5 +25,13 @@ def screenshot(device=None, name=None):
         image.show()
 
 
-remote_connect()
-device = get_device()
+def tap(device, coordinate: (int, int)):
+    device.click(*coordinate)
+    time.sleep(0.2)
+
+
+def swipe(device, start_coordinate: (int, int), changes_coordiante: (int, int),
+          swipe_time):
+    end_coordinate = map(sum, zip(start_coordinate, changes_coordiante))
+    device.swipe(*start_coordinate, *end_coordinate, swipe_time)
+    time.sleep(0.3)
