@@ -9,6 +9,7 @@ SUZHOU = (805, 1076)
 YINGTIAN = (402, 1155)
 ZHIDAOLE = (677, 1797)
 
+PEOPLE = (380, 627)
 # SWIPE_MAP = (908, 1648, 908 - 776, 1648 - 599, 0.5)
 SWIPE_MAP_START = (908, 1648)
 SWIPE_MAP_CHANGES = (-776, -559)
@@ -24,16 +25,15 @@ Y_RANGE = 60
 
 
 def suzhou_fish_shop():
+    # TODO: click fish shop to make money <19-09-20, Fingalzzz> #
     pass
 
 
-def suzhou_well(device):
-    autoclick.tap(device, FUYING)
-    autoclick.tap(device, DIJI)
-    autoclick.tap(device, FUYING)
-    autoclick.swipe(device, SWIPE_SUZHOU_WELL_START, SWIPE_SUZHOU_WELL_CHANGES,
-                    3)
-    # device.swipe(*SWIPE_SUZHOU_WELL)
+def suzhou_well():
+    autoclick.tap(FUYING)
+    autoclick.tap(DIJI)
+    autoclick.tap(FUYING)
+    autoclick.swipe(SWIPE_SUZHOU_WELL_START, SWIPE_SUZHOU_WELL_CHANGES, 3)
     for i in range(36):
         if i in EMPTY_WELL_LIST:
             continue
@@ -42,35 +42,34 @@ def suzhou_well(device):
         well_x = WELL_HEAD[0] + (-quotient + remainder) * X_RANGE
         well_y = WELL_HEAD[1] + (quotient + remainder) * Y_RANGE
         coor_well = (well_x, well_y)
-        autoclick.tap(device, coor_well)
-        device.click(380, 627)
-        device.click(380, 627)
+        autoclick.tap(coor_well)
+        autoclick.tap(PEOPLE)
+        autoclick.tap(PEOPLE)
 
 
-def move_to_suzhou(device):
-    autoclick.tap(device, FUYING)
-    autoclick.tap(device, MAP)
+def move_to_suzhou():
+    autoclick.tap(FUYING)
+    autoclick.tap(MAP)
     time.sleep(0.5)
     # device.swipe(*SWIPE_MAP)
-    autoclick.swipe(device, SWIPE_MAP_START, SWIPE_MAP_CHANGES, 1)
-    autoclick.tap(device, SUZHOU)
+    autoclick.swipe(SWIPE_MAP_START, SWIPE_MAP_CHANGES, 1)
+    autoclick.tap(SUZHOU)
     time.sleep(7)
-    autoclick.tap(device, ZHIDAOLE)
+    autoclick.tap(ZHIDAOLE)
 
 
-def move_to_yingtian(device):
-    autoclick.tap(device, FUYING)
-    autoclick.tap(device, MAP)
+def move_to_yingtian():
+    autoclick.tap(FUYING)
+    autoclick.tap(MAP)
     time.sleep(0.5)
-    autoclick.tap(device, YINGTIAN)
+    autoclick.tap(YINGTIAN)
     time.sleep(7)
-    autoclick.tap(device, ZHIDAOLE)
+    autoclick.tap(ZHIDAOLE)
 
 
 if __name__ == "__main__":
-    op6t = autoclick.connect()
     while True:
-        move_to_yingtian(op6t)
-        move_to_suzhou(op6t)
-        suzhou_well(op6t)
+        move_to_yingtian()
+        move_to_suzhou()
+        suzhou_well()
         time.sleep(80)

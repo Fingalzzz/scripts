@@ -155,5 +155,5 @@ tags
 # Persistent undo
 [._]*.un~
 
-.vim/*
+autoclick/.vim/*
 *.png
