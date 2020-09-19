@@ -4,7 +4,7 @@ Some scrips for personal use.
 
 - **autoclick**
 
-    Simple library wrapper of [adbutils](https://github.com/openatx/adbutils), use Python to communicate ADB server to control the phone. See the details at [README](https://github.com/Fingalzzz/blob/master/autoclick/README.md) of autoclick.
+    Simple library wrapper of [adbutils](https://github.com/openatx/adbutils), use Python to communicate ADB server to control the phone. See the details at [README](https://github.com/Fingalzzz/Scripts/blob/master/autoclick/README.md) of autoclick.
 
     And some scripts using autoclick to perform simple automatic actions.
 
