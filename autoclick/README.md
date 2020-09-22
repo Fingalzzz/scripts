@@ -34,7 +34,7 @@ autoclick.swipe(devices, start_coordinate:(int, int), changes_coordinate:(int, i
 
 ## Examples
 
-See [jiangnan.py](https://github.com/Fingalzzz/Scripts/blob/master/autoclick/jiangnan.py) as an expamle
+See [jiangnan.py](https://github.com/Fingalzzz/scripts/blob/master/autoclick/jiangnan.py) as an expamle
 It's a simple scripts use autoclick to cheat [江南百景图](https://jiangnan.coconut.is/), make money in the game using wells.
 
 ## Thanks
@@ -43,5 +43,5 @@ It's a simple scripts use autoclick to cheat [江南百景图](https://jiangnan.
 
 ## LICENSE
 
-[MIT](https://github.com/Fingalzzz/Scripts/blob/master/LICENSE)
+[MIT](https://github.com/Fingalzzz/scripts/blob/master/LICENSE)
 
