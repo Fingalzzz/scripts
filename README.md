@@ -17,7 +17,7 @@ Some scrips for personal use.
 
     And some scripts using autoclick to perform simple automatic actions.
 
-- serverless
+- **serverless**
 
     Serverless functions runs on AWS Lambda. 
 
