@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fullscreen Shortcut
 // @namespace    https://greasyfork.org/users/673298
-// @version      1.2.1
+// @version      1.2.2
 // @author       Fingalzzz
 // @description  Add a shortcut to enable fullscreen mode of several streaming-media websites
 // @homepage     https://greasyfork.org/en/scripts/408194-fullscreen-shortcut
@@ -27,7 +27,7 @@
             var link = window.location.href;
             if (link.includes("bilibili.com/bangumi")) {
                 selector = ".squirtle-video-fullscreen";
-            } else if (link.includes("bilibili.com/vedio")) {
+            } else if (link.includes("bilibili.com/video")) {
                 selector = ".bilibili-player-iconfont-fullscreen-on";
             } else if (link.includes('iqiyi.com')) {
                 selector = ".iqp-btn.iqp-btn-fullscreen";
