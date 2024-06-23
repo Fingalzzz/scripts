@@ -6,6 +6,8 @@
 // @description  Add a shortcut to enable fullscreen mode of several streaming-media websites
 // @homepage     https://greasyfork.org/en/scripts/408194-fullscreen-shortcut
 // @supportURL   https://greasyfork.org/en/scripts/408194-fullscreen-shortcut
+// @updateURL    https://raw.githubusercontent.com/Fingalzzz/scripts/master/Tampermonkey/fullscreen.js
+// @downloadURL  https://raw.githubusercontent.com/Fingalzzz/scripts/master/Tampermonkey/fullscreen.js
 // @match        https://www.bilibili.com/video/*
 // @match        https://www.bilibili.com/bangumi/play/*
 // @match        https://www.iqiyi.com/*
