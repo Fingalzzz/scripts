@@ -26,7 +26,7 @@
             var btn = null;
             var link = window.location.href;
             if (link.includes("bilibili.com/bangumi")) {
-                selector = ".squirtle-video-fullscreen";
+                selector = ".bpx-player-ctrl-btn.bpx-player-ctrl-full";
             } else if (link.includes("bilibili.com/video")) {
                 selector = ".bpx-player-ctrl-btn.bpx-player-ctrl-full";
             } else if (link.includes('iqiyi.com')) {
