@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Fullscreen Shortcut
 // @namespace    https://greasyfork.org/users/673298
-// @version      1.2.4
+// @version      1.2.5
 // @author       Fingalzzz
 // @description  Add a shortcut to enable fullscreen mode of several streaming-media websites
 // @homepage     https://greasyfork.org/en/scripts/408194-fullscreen-shortcut
