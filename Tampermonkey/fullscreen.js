@@ -19,11 +19,11 @@
 
 (function () {
     'use strict';
-    const shortcut = '\\';
+    const shortcut = 'Backslash';
 
     document.addEventListener('keydown', (e) => {
         //if (e.ctrlKey && e.key === shortcut) {
-        if (e.key === shortcut) {
+        if (e.code === shortcut) {
             var selector = null;
             var btn = null;
             var link = window.location.href;
