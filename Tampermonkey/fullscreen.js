@@ -19,33 +19,41 @@
 
 (function () {
     'use strict';
-    const shortcut = 'Backslash';
+    const shortcut = 'Backslash'; // You can change this to your preferred key
+
+    const siteSelectors = [
+        { pattern: /bilibili\.com\/(bangumi|video)/, selector: ".bpx-player-ctrl-btn.bpx-player-ctrl-full" },
+        { pattern: /iqiyi\.com/, selector: ".iqp-btn.iqp-btn-fullscreen" },
+        { pattern: /v\.qq\.com/, selector: ".txp_btn.txp_btn_fullscreen" },
+        { pattern: /youtube\.com/, selector: ".ytp-fullscreen-button.ytp-button" }
+        // Youku handled separately
+    ];
 
     document.addEventListener('keydown', (e) => {
-        //if (e.ctrlKey && e.key === shortcut) {
         if (e.code === shortcut) {
-            var selector = null;
-            var btn = null;
-            var link = window.location.href;
-            if (link.includes("bilibili.com/bangumi")) {
-                selector = ".bpx-player-ctrl-btn.bpx-player-ctrl-full";
-            } else if (link.includes("bilibili.com/video")) {
-                selector = ".bpx-player-ctrl-btn.bpx-player-ctrl-full";
-            } else if (link.includes('iqiyi.com')) {
-                selector = ".iqp-btn.iqp-btn-fullscreen";
-            } else if (link.includes('v.qq.com')) {
-                selector = ".txp_btn.txp_btn_fullscreen";
-            } else if (link.includes('youtube.com')) {
-                selector = ".ytp-fullscreen-button.ytp-button";
-            } else if (link.includes('v.youku.com')) {
-                // Youku use different button to enable and exit fullscreen
-                // so we need to check whether button we need now.
-                selector = document.fullscreen? ".iconfont.icon-exit-fullscreen":".iconfont.icon-fullscreen"
-            }
-            btn = document.querySelector(selector);
-            btn.click();
-        }
-    })
+            let selector = null;
+            const link = window.location.href;
 
+            for (const site of siteSelectors) {
+                if (site.pattern.test(link)) {
+                    selector = site.selector;
+                    break;
+                }
+            }
+            if (link.includes('v.youku.com')) {
+                selector = document.fullscreen ? ".iconfont.icon-exit-fullscreen" : ".iconfont.icon-fullscreen";
+            }
+
+            if (selector) {
+                const btn = document.querySelector(selector);
+                if (btn) {
+                    btn.click();
+                } else {
+                    // Optional: Add feedback for debugging
+                    // alert("Fullscreen button not found on this page.");
+                }
+            }
+        }
+    });
 })();
 
